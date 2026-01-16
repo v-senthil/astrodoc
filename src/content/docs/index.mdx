@@ -1,40 +1,49 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Zoho IM SDK Documentation
+description: Unified Instant Messaging Integration Platform - Complete API Reference and Developer Guide
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Unified Instant Messaging Integration Platform for seamless WhatsApp, Telegram, Line, and WeCom integrations.
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/zoho-im-logo.png
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Get Started
+      link: /onboarding-into-zoho-im/features-available/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
-      variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Quick Start
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="Onboarding" icon="rocket">
+		Learn how to get started with Zoho IM SDK and set up your integration.
 	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
+	<Card title="Authentication" icon="setting">
+		Configure OAuth tokens and authentication for your application.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="Channels" icon="seti:db">
+		Create and manage messaging channels for WhatsApp, Telegram, Line, and more.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+	<Card title="Messages" icon="document">
+		Send and receive messages through the unified messaging API.
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+</CardGrid>
+
+## Features
+
+<CardGrid>
+	<Card title="WhatsApp Integration" icon="approve-check">
+		Full WhatsApp Business API support with template messages and broadcasts.
+	</Card>
+	<Card title="Telegram Integration" icon="approve-check">
+		Connect with Telegram bots and channels seamlessly.
+	</Card>
+	<Card title="Line Integration" icon="approve-check">
+		Line messaging platform integration for Asian markets.
+	</Card>
+	<Card title="WeCom Integration" icon="approve-check">
+		Enterprise WeChat integration for business communications.
 	</Card>
 </CardGrid>

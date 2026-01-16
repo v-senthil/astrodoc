@@ -1,0 +1,36 @@
+---
+title: WhatsApp Integration
+sidebar_label: Message Failure Reasons
+sidebar:
+  order: 10
+description: "IM Message Failure Code and Reason:"
+slug: 1.0.0/messages/message-failure-reasons
+---
+
+IM Message Failure Code and Reason:
+
+Get Message Meta:
+
+```
+IMMessage message = ; // get IMMessage object using getSessionMessages or getMessages API
+String messageFailureCode = message.getMeta().get(IMMessageMeta.FAILED_REASON);
+IMMessageStatusErrorCode messageStatusErrorCode = IMMessageStatusErrorCode.valueOf(messageFailureCode);
+String statusDescription = messageStatusErrorCode.getStatusMessage();
+```
+
+Note\*: The Above Message Failure is handled only for WhatsApp. Later will also be handled for other Integration Services.
+
+<table><colgroup><col /> <col /></colgroup><tbody><tr><td><div><p>CODE</p></div></td><td><div><p>REASON</p></div></td></tr><tr><td><div><p>SERVICE\_UNAVAILABLE</p></div></td><td><div><p>API for Integration Service Unavailable</p></div></td></tr><tr><td><div><p>SERVICE\_POLICY\_VIOLATION</p></div></td><td><div><p>Violates Integration Service Policy</p></div></td></tr><tr><td><div><p>SERVICE\_UNKNOWN\_ERROR</p></div></td><td><div><p>Integration Service unknown error</p></div></td></tr><tr><td><div><p>INVALID\_RECEIVER</p></div></td><td><div><p>Recipient not valid for this integration service</p></div></td></tr><tr><td><div><p>PAYMENT\_ERROR</p></div></td><td><div><p>Integration Service Payment Error</p></div></td></tr><tr><td><div><p>RATE\_LIMIT</p></div></td><td><div><p>Integration Service Rate limit exceed</p></div></td></tr><tr><td><div><p>INSUFFICIENT\_CREDITS</p></div></td><td><div><p>Insufficient Credits</p></div></td></tr><tr><td><div><p>MEDIA\_ERROR</p></div></td><td><div><p>Unsupported Media Type</p></div></td></tr><tr><td><div><p>EXPERIMENT\_NUMBER</p></div></td><td><div><p>Recipient under Integration Experiment</p></div></td></tr><tr><td><div><p>CONVERSATION\_WINDOW\_EXPIRED</p></div></td><td><div><p>Conversation Window has expired</p></div></td></tr><tr><td><div><p>ACCOUNT\_LOCKED</p></div></td><td><div><p>Integration blocked/locked your account</p></div></td></tr><tr><td><div><p>PHONE\_NUMBER\_DELETED</p></div></td><td><div><p>Business Phone Number Deleted</p></div></td></tr><tr><td><div><p>TEMPLATE\_PAUSED</p></div></td><td><div><p>Template Paused</p></div></td></tr><tr><td><div><p>TEMPLATE\_DELETED</p></div></td><td><div><p>Template Deleted</p></div></td></tr><tr><td><div><p>TEMPLATE\_INVALID</p></div></td><td><div><p>Template is invalid</p></div></td></tr><tr><td><div><p>MESSAGE\_CONTENT\_INVALID</p></div></td><td><div><p>Message Content is missing/invalid</p></div></td></tr><tr><td><div><p>SELF\_MESSAGE</p></div></td><td><div><p>Sender and recipient cannot be the same</p></div></td></tr><tr><td><div><p>UNKNOWN\_ERROR</p></div></td><td><div><p>Unknown error</p></div></td></tr><tr><td><div><p>PAGE\_PERMISSION\_REVOKED</p></div></td><td><div><p>Page permission is revoked</p></div></td></tr><tr><td><div><p>PAGE\_ACCESSTOKEN\_EXPIRED</p></div></td><td><div><p>Page access token expired</p></div></td></tr><tr><td><div><p>USER\_BLOCKED</p></div></td><td><div><p>This person isn't receiving messages from you right now</p></div></td></tr><tr><td><div><p>INVALID\_CHANNEL\_CONFIGURATION</p></div></td><td><div><p>Channel Configuration invalid</p></div></td></tr></tbody></table>
+
+## WhatsApp Integration
+
+### INVALID\_RECEIVER
+
+It could be one of the following reasons.
+![Illustration](/inline-images/messages/message-failure-reasons/1.0.0/1726110812933.png)
+
+We will not be receiving the exact reason why the message failed. When checked with meta, below was their reply,
+
+If a marketing template message is not delivered to a given user due to the limit, Cloud API will return error code 131026. Note, however, that these error codes cover a wide range of issues that can result in non-delivery of a message, and for privacy reasons, we will not disclose if in fact the message was not delivered due to the limit.
+
+[Per-User Marketing Template Message Limits](https://developers.facebook.com/micro_site/url/?click_from_context_menu=true\&country=IN\&destination=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fwhatsapp%2Fcloud-api%2Fguides%2Fsend-message-templates%23per-user-marketing-template-message-limits\&event_type=click\&last_nav_impression_id=07FZpdmRJhm7TYlFP\&max_percent_page_viewed=61\&max_viewport_height_px=862\&max_viewport_width_px=1512\&orig_http_referrer=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fwhatsapp%2Fcloud-api%2Fsupport%2Ferror-codes%2F\&orig_request_uri=https%3A%2F%2Fdevelopers.facebook.com%2Fajax%2Fdocs%2Fnav%2F%3Fpath1%3Dwhatsapp%26path2%3Dcloud-api%26path3%3Dsupport%26path4%3Derror-codes\&region=apac\&scrolled=true\&session_id=1ydZP4mVRddmM7REF\&site=developers)

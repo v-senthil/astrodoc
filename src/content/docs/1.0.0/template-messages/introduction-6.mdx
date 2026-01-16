@@ -1,0 +1,142 @@
+---
+title: Pre-Approved Message Templates
+sidebar_label: Introduction
+sidebar:
+  order: 1
+description: A message template is required to start a business-initiated conversation.
+slug: 1.0.0/template-messages/introduction-6
+---
+
+### Pre-Approved Message Templates
+
+A message template is required to start a business-initiated conversation.
+
+* Business-initiated messages can only be sent to users who have opted-in to receive messages from your business and must be transactional.
+* When sending notifications, one must use a previously approved template.
+
+### Template Message in IM:
+
+* Each Template Message will be created under a channel only (i.e under the WABA which mapped to that channel). If channel is not given, template message will be added under default WABA.
+* If there is a channel update where in, the channel is updated to different WABA, the Template message already present under the channel before update will not be migrated. After update, you have to create new templates.
+* Supported Template Tags (category) - [link](https://documenter.getpostman.com/view/18635004/2s935vkfHz#32f06200-7134-4fe0-b9fb-17c21a733852)
+* Supported Template Languages - [link](https://documenter.getpostman.com/view/18635004/2s935vkfHz#70d33de6-cf17-499d-9bc7-88f7068ae480)
+
+### Restrictions while creating template message
+
+[Note](https://learn.zoho.com/portal/zohocorp/team/zohoim/manual/available-integrations/article/template-messages#_Toccqouamdx4qlc)[:](https://learn.zoho.com/portal/zohocorp/team/zohoim/manual/available-integrations/article/template-messages#_Toccqouamdx4qlc) We advice the services integrating whatsapp via IM to make these restrictions/ limitations in your client (UI) also.
+
+![Illustration](/inline-images/template-messages/introduction-6/1.0.0/1682615007419.png)
+
+<table><colgroup><col /> <col /></colgroup><tbody><tr><td><div><p><span><img height="237" src="/img/inline-images/template-messages/introduction-6/1686850621796.png" width="331" alt="Illustration" /></span></p><p>Header image with body message and footer message      </p></div></td><td><div><p><span><img height="284" src="/img/inline-images/template-messages/introduction-6/1686850643941.png" width="327" alt="Illustration" /></span></p><p>Header image with body message, footer message</p><p>and 2 reply buttons</p></div></td></tr><tr><td><div><p><span><img height="316" src="/img/inline-images/template-messages/introduction-6/1686850656245.png" width="326" alt="Illustration" /></span></p><p>Header image with body message, footer message</p><p>along with one phone number button and one url button</p></div></td><td><div><p><span><img src="/img/inline-images/template-messages/introduction-6/1686850684713.png" alt="Illustration" /></span></p><p>Header Message with body message, Footer message and one url button</p></div></td></tr></tbody></table>
+
+Components in a template message:
+
+1. Header
+2. Body
+3. Footer
+4. Buttons
+
+For more information on template message components [visit](https://developers.facebook.com/docs/whatsapp/business-management-api/message-templates/components)
+
+We advise service teams to provide these restrictions in your client (UI) as well.
+
+<table><colgroup><col /> <col /> <col /> <col /> <col /></colgroup><tbody><tr><td><div /></td><td><div><p>Header</p></div></td><td><div><p>Body</p></div></td><td><div><p>Footer</p></div></td><td><div><p>Buttons</p></div></td></tr><tr><td><div><p>Mandatory</p></div></td><td><div><p>-</p></div></td><td><div><p>Yes</p></div></td><td><div><p>-</p></div></td><td><div><p>-</p></div></td></tr><tr><td><div><p>Types Supported</p></div></td><td><div><p>Text, Image, Video and Document</p></div></td><td><div><p>Text</p></div></td><td><div><p>Text</p></div></td><td><div><p>Quick Reply, Phone number and URL</p></div></td></tr><tr><td><div><p>Place holder support</p></div></td><td><div><p>1</p></div></td><td><div><p>10</p></div></td><td><div><p>-</p></div></td><td><div><p>1 placeholder in URL Button</p></div></td></tr><tr><td><div><p>Maximum length for Message</p></div></td><td><div><p>60</p></div></td><td><div><p>1024</p></div></td><td><div><p>60</p></div></td><td><div><p>20</p></div></td></tr></tbody></table>
+
+### Header
+
+1. Optional
+
+2. Supported Types:
+
+3. TEXT
+
+4. 60 characters
+
+5. 1 placeholder
+
+6. There should be a space before the placeholder
+
+7. No new lines, formatting characters, emojis or asterisks
+
+8. IMAGE
+
+9. Supported formats: jpg, jpeg,png
+
+10. Maximum Size: 5MB
+
+11. VIDEO
+
+12. Supported formats: mp4,3gpp
+
+13. Maximum Size: 16MB
+
+14. DOCUMENT
+
+15. Supported formats: pdf
+
+16. Maximum Size: 40MB
+
+### Body
+
+1. Mandatory
+2. 1024 characters (including the replaced placeholders values)
+3. A Maximum of 10 placeholders is allowed.
+4. There should be a space before placeholders.
+5. The message body can't have more than two consecutive newline characters.
+6. Cannot have only parameters
+7. Cannot have more than 10 emojis.
+
+### Footer
+
+1. Optional
+2. 60 characters
+3. No placeholder
+4. No newlines or emojis or special characters
+
+### Buttons
+
+1. Optional
+
+2. Max 10 buttons
+
+3. Support Types:
+
+4. QUICK REPLY
+
+5. 20 characters
+
+6. Message cannot be repeated
+
+7. No placeholders
+
+8. PHONE NUMBER
+
+9. Message should have 20 characters
+
+10. The phone number should have 20 characters only.
+
+11. It should be a valid phone number
+
+12. No placeholders
+
+13. URL
+
+14. Message should have 20 characters
+
+15. The URL can have 1000 characters (including the placeholder replaced value)
+
+16. It should be a valid URL starting with http or https. Base URL is mandatory.
+
+17. Can contain one placeholder
+
+18. Button Formation combination can be in any of the following:
+
+19. 10 QUICK\_REPLY buttons
+
+20. 8 QUICK\_REPLY buttons, 1 PHONE\_NUMBER, and 1 URL
+
+21. 1 PHONE\_NUMBER
+
+22. 1 URL
+
+23. 1 PHONE\_NUMBER and 1 URL

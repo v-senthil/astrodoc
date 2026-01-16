@@ -1,0 +1,13 @@
+---
+title: Failure reasons
+sidebar:
+  order: 3
+description: When a request fails internally in Line, the error code
+  LINE_INTEGRATION_ERROR is always returned and based on the failure reasons the
+  error message is returned .
+slug: 1.0.0/line-custom-apis/failure-reasons
+---
+
+When a request fails internally in Line, the error code LINE\_INTEGRATION\_ERROR is always returned and based on the failure reasons the error message is returned .
+
+<table><colgroup><col /> <col /></colgroup><tbody><tr><td><div><p>                  Error message</p></div></td><td><div><p>        Cause</p></div></td></tr><tr><td><div><p>      UNAUTHORIZED   </p></div></td><td><div><p>Line channel Access Token is not valid</p></div></td></tr><tr><td><div><p>      FORBIDDEN</p></div></td><td><div><p>i) Unauthorized due to security issues </p><p>ii) Current plan does not support this operation</p></div></td></tr><tr><td><div><p>      NOT\_FOUND</p></div></td><td><div><p>i)Webhook not configured </p><p>ii) Resource does not exist</p></div></td></tr><tr><td><div><p>      BAD\_REQUEST</p></div></td><td><div><p>Request not constructed properly </p></div></td></tr><tr><td><div><p>     SC\_INTERNAL\_SERVER\_ERROR</p></div></td><td><div><p>Request failed internally in line </p></div></td></tr></tbody></table>

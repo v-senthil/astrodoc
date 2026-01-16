@@ -1,0 +1,161 @@
+---
+title: "postman collection : link"
+sidebar_label: Instagram Layout messages
+sidebar:
+  order: 6
+description: 1) Description is mandatory
+slug: 1.0.0/layout-messages/instagram-layout-messages
+---
+
+### postman collection : [link](https://documenter.getpostman.com/view/18635004/2s935vkfHz#102cfe39-b687-42e9-a06e-0a2ec43a0449)
+
+### Constraints :
+
+1. Description is mandatory
+
+2. Description limit - 640 Characters
+
+3. Title and Subtitle are not supported
+
+4. Providing one button in mandatory
+
+5. URL buttons :
+
+* Button Limit - 3
+* Message Character Limit - 20
+* Action Character Limit - 1000
+
+6. Reply Buttons :
+
+* Button Limit - 13
+* Message Character Limit - 20
+
+7. Attachments are not supported
+
+#### Send Normal Layout Messages with URL buttons :
+
+36. private static final Long SESSION\_ID = 435345l;
+
+37. public static final Long IM\_ORG\_ID = 74203785L;     //Created by IMOrganization Creation
+
+38. public static final Long SERVICE\_ORG\_ID = 74199498L;     //Zoho ServiceOrg ID or AppAccount ID
+
+39. public static final Long USER\_ID = 69718860L;          //Zoho User ID
+
+40. public static void main(String \[]args) \{
+
+41. try \{
+
+42. IMLayoutMessageBuilder.Builder builder = new IMLayoutMessageBuilder.Builder(SESSION\_ID);
+
+43. // set description
+
+44. builder.setDescription("This is description");
+
+45. // set buttons
+
+46. IMLayoutButton buttonOne = new IMLayoutButton.Builder(IMLayoutButtonElementType.REDIRECT, "visit", "https://zoho.com/3").build();
+
+47. IMLayoutButton buttonTwo = new IMLayoutButton.Builder(IMLayoutButtonElementType.REDIRECT, "visit", "https://zoho.com/2").build();
+
+48. IMLayoutButton buttonThree = new IMLayoutButton.Builder(IMLayoutButtonElementType.REDIRECT, "visit", "https://zoho.com/1").build();
+
+49. List\<IMLayoutButton> buttons = new ArrayList\<>();
+
+50. buttons.add(buttonOne);
+
+51. buttons.add(buttonTwo);
+
+52. buttons.add(buttonThree);
+
+53. IMLayoutMessageButton layoutButton = new IMLayoutMessageButton.
+
+54. Builder(IMLayoutButtonStyle.URL\_BUTTON,
+
+55. IMLayoutButtonType.BUTTON, buttons)
+
+56. .build();
+
+57. builder.setButtons(layoutButton);
+
+58. // Send Message
+
+59. IMMessage message = ZohoIM.getInstance(IM\_ORG\_ID, SERVICE\_ORG\_ID)
+
+60. .getMessageAPI(USER\_ID)
+
+61. .layoutMessage(builder.build());
+
+62. System.out.println(message.getId());
+
+63. }catch (Exception e) \{
+
+64. System.out.println(e.getMessage());
+
+65. }
+
+66. }
+
+Send Normal Layout Messages with REPLY buttons :
+
+34. private static final Long SESSION\_ID = 435345l;
+
+35. public static final Long IM\_ORG\_ID = 74203785L;     //Created by IMOrganization Creation
+
+36. public static final Long SERVICE\_ORG\_ID = 74199498L;     //Zoho ServiceOrg ID or AppAccount ID
+
+37. public static final Long USER\_ID = 69718860L;          //Zoho User ID
+
+38. public static void main(String \[]args) \{
+
+39. try \{
+
+40. IMLayoutMessageBuilder.Builder builder = new IMLayoutMessageBuilder.Builder(SESSION\_ID);
+
+41. // set description
+
+42. builder.setDescription("This is description");
+
+43. // set buttons
+
+44. IMLayoutButton buttonOne = new IMLayoutButton.Builder(IMLayoutButtonElementType.REPLY, "Yes").build();
+
+45. IMLayoutButton buttonTwo = new IMLayoutButton.Builder(IMLayoutButtonElementType.REPLY, "No").build();
+
+46. List\<IMLayoutButton> buttons = new ArrayList\<>();
+
+47. buttons.add(buttonOne);
+
+48. buttons.add(buttonTwo);
+
+49. IMLayoutMessageButton layoutButton = new IMLayoutMessageButton.
+
+50. Builder(IMLayoutButtonStyle.REPLY,
+
+51. IMLayoutButtonType.BUTTON, buttons)
+
+52. .build();
+
+53. builder.setButtons(layoutButton);
+
+54. // Send Message
+
+55. IMMessage message = ZohoIM.getInstance(IM\_ORG\_ID, SERVICE\_ORG\_ID)
+
+56. .getMessageAPI(USER\_ID)
+
+57. .layoutMessage(builder.build());
+
+58. System.out.println(message.getId());
+
+59. }catch (Exception e) \{
+
+60. System.out.println(e.getMessage());
+
+61. }
+
+62. }
+
+### Error Codes
+
+<table><colgroup><col /> <col /> <col /></colgroup><tbody><tr><td><div><p>Error Code</p></div></td><td><div><p>Error Message</p></div></td><td><div><p>Error Reason</p></div></td></tr><tr><td><div><p>ENTITY\_MESSAGE\_FORMAT\_ERROR</p></div></td><td><div><p>Entity Button Message should contain only 20 characters and no empty message</p></div></td><td><div><p>Button text exceeds 20 chars</p></div></td></tr><tr><td><div><p>ENTITY\_UNSUPPORT\_ERROR</p></div></td><td><div><p>Entity TEXT does not support SUB\_TITLE in INSTAGRAM</p></div></td><td><div><p>SUB\_TITLE is not supported in Instagram</p></div></td></tr><tr><td><div><p>ENTITY\_UNSUPPORT\_ERROR</p></div></td><td><div><p>Entity TEXT does not support TITLE in INSTAGRAM</p></div></td><td><div><p>TITLE is not supported in Instagram</p></div></td></tr><tr><td><div><p>ENTITY\_MISSING\_ERROR</p></div></td><td><div><p>Entity Payload should contain style BUTTON</p></div></td><td><div><p>Button is missing in payload</p></div></td></tr><tr><td><div><p>ENTITY\_MISSING\_ERROR</p></div></td><td><div><p>Entity Payload should contain style DESCRIPTION</p></div></td><td><div><p>Description is missing in payload</p></div></td></tr><tr><td><div><p>ENTITY\_FORMAT\_ERROR</p></div></td><td><div><p>Entity URL\_BUTTON should contain only 3 elements</p></div></td><td><div><p>Url Button Type has more than 3 button elements.</p></div></td></tr><tr><td><div><p>ENTITY\_FIELDS\_ERROR</p></div></td><td><div><p>Entity URL button should not contain Reply Button</p></div></td><td><div><p>URL button type have given with reply button element</p></div></td></tr><tr><td><div><p>ENTITY\_FORMAT\_ERROR</p></div></td><td><div><p>Entity BUTTON should contain only 13 elements</p></div></td><td><div><p>Button Type has more than 13 button elements.</p></div></td></tr><tr><td><div><p>ENTITY\_MESSAGE\_FORMAT\_ERROR</p></div></td><td><div><p>Entity URL action should contain only 1000 characters and no empty message</p></div></td><td><div><p>URL button action url limit is 1000 chars</p></div></td></tr><tr><td><div><p>ENTITY\_FORMAT\_ERROR</p></div></td><td><div><p>Entity DESCRIPTION should contain only 640 elements</p></div></td><td><div><p>Description text exceeds 640 chars</p></div></td></tr><tr><td><div><p>UNHANDLED\_TYPE\_ERROR</p></div></td><td><div><p>Type 'IMAGE' is unhandled in INSTAGRAM</p></div></td><td><div><p>Image is not supported in Instagram</p></div></td></tr><tr><td><div><p>ENTITY\_UNSUPPORT\_ERROR</p></div></td><td><div><p>Entity Style reply does not support REDIRECT in INSTAGRAM</p></div></td><td><div><p>Reply button type should not have REDIRECT</p></div></td></tr><tr><td><div><p>ENTITY\_MISSING\_ERROR</p></div></td><td><div><p>Entity Type Redirect should contain action</p></div></td><td><div><p>Action field is missing REDIRECT type URL button</p></div></td></tr></tbody></table>

@@ -1,0 +1,79 @@
+---
+title: Integration Connect
+sidebar_label: Introduction
+sidebar:
+  order: 1
+description: "Steps:"
+slug: 1.0.0/whatsapp-integration-sdk/introduction-9
+---
+
+## Integration Connect
+
+Steps:
+
+1. IM Org creation - [link](/1.0.0/portal/zohocorp/team/zohoim/manual/sdk-reference/article/create-an-im-organization)
+
+2. IM Credits widget - [link](/1.0.0/portal/zohocorp/team/zohoim/manual/im-developers-corner/article/credits-purchase)
+
+3. WhatsApp Embedded signup - [link](/1.0.0/portal/zohocorp/team/zohoim/manual/sdk-reference/article/copy-of-embedded-signup)
+
+4. Required to authenticate a business, WABA and phone number
+
+5. Get WABA ID - [link](/1.0.0/portal/zohocorp/team/zohoim/manual/sdk-reference/article/copy-of-whatsapp-details)
+
+6. Once step 1 is done, WABA ID will be mapped to IM org.
+
+7. A single org can have multiple WABAs
+
+8. Get Phone numbers - [link](/1.0.0/portal/zohocorp/team/zohoim/manual/sdk-reference/article/whatsapp-phone-numbers)
+
+9. OTP Verification (If required) - [link](/1.0.0/portal/zohocorp/team/zohoim/manual/sdk-reference/article/whatsapp-phone-number-verification)
+
+10. Channel creation - [link](/1.0.0/portal/zohocorp/manual/sdk-reference/article/create-an-im-channel#_Tocjx71ppuqt35g)
+
+11. Incoming and outgoing messages - [link](/1.0.0/portal/zohocorp/team/zohoim/manual/sdk-reference/article/send-a-text-message)
+
+12. Pricing - [link](/1.0.0/portal/zohocorp/team/zohoim/manual/available-integrations/article/pricing)
+
+13. Phone number tiers and quality - [link](/1.0.0/portal/zohocorp/team/zohoim/manual/available-integrations/article/phone-number-tiers-and-messaging-limits)
+
+14. Template creation - [link](/1.0.0/portal/zohocorp/manual/sdk-reference/article/template-message-flow#_Tocwpd2iw1t3yyu)
+
+15. Template is a pre approved content used to send a message to a new contact or existing contact.
+
+16. Send a template message - [link](/1.0.0/portal/zohocorp/team/zohoim/manual/sdk-reference/article/initiate-session-send-template-message)
+
+17. Broadcast messages - [link](/1.0.0/portal/zohocorp/team/zohoim/manual/sdk-reference/article/introduction-3)
+
+## Integration Disconnect
+
+Customer can ask the following during disconnect,
+
+1. Phone number disconnect from whatsApp
+2. Release phone number from BSP
+
+Steps:
+
+1. Channel deletion - [link](/1.0.0/portal/zohocorp/manual/sdk-reference/article/activate-deactivate-and-delete-channel#_Toc1dg753g4qr5n)
+
+2. This will disconnect the phone number from whatsApp.
+
+3. Options are available to have the conversations or delete channel along with conversations.
+
+4. WABA removal
+
+5. This will stop the process of incoming messages.
+
+6. 2FA disable
+
+7. This is done only if customer wants to use another BSP
+
+8. Customer can directly go delete phone number from the WABA in meta console
+
+9. Or we can manually disable 2FA for the phone number in meta console.
+
+## BSP Migration
+
+WhatsApp phone number migration enables migrating a registered phone number from one WhatsApp Business Account  (WABA) to another. Using this, a business can easily switch their phone number from an active WABA created in other business-service-providers to a new or an existing one created in Zoho.
+
+Reference [link](/1.0.0/portal/zohocorp/team/zohoim/manual/sdk-reference/article/whatsapp-bsp-migration-1)

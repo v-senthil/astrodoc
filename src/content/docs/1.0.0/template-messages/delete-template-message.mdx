@@ -1,0 +1,15 @@
+---
+title: Delete a Single Template
+sidebar_label: Delete Template Message
+sidebar:
+  order: 6
+slug: 1.0.0/template-messages/delete-template-message
+---
+
+## Delete a Single Template
+
+```
+ IMCannedMessage message = ZohoIM.getInstance(IM_ORG_ID, SERVICE_ORG_ID)
+        .getCannedMessageAPI(USER_ID)
+        .delete(TEMPLATE_MESSAGE_ID);
+```
