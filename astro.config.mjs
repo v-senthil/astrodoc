@@ -6,7 +6,7 @@ import starlightVersions from 'starlight-versions';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://v-senthil.github.io',
-	base: '/im-sdk-docs',
+	base: '/astrodoc',
 	integrations: [
 		starlight({
 			title: 'Zoho IM SDK',
