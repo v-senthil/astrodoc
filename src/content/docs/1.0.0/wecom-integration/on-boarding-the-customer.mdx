@@ -51,11 +51,11 @@ $\{imBaseDomain}/widget/weComEmbeddedSignup?orgId=$\{imOrgId}\&serviceOrgId=$\{o
 It will fetch the Wecom Authorization Url from IM and load it in a seperate window.
 
 If the customer not logged in the Wecom Account It will show the QR code to login first.
-![Illustration](/inline-images/wecom-integration/on-boarding-the-customer/1.0.0/1758549161913.png)
+![Illustration](/astrodoc/inline-images/wecom-integration/on-boarding-the-customer/1.0.0/1758549161913.png)
 
 Once logged in WeCom account, It will ask to provide permission for the account. Cx have to accept the agreement and provide permissions for ZohoIM.
 
-![Illustration](/inline-images/wecom-integration/on-boarding-the-customer/1.0.0/1758549161859.png)
+![Illustration](/astrodoc/inline-images/wecom-integration/on-boarding-the-customer/1.0.0/1758549161859.png)
 
 After authorization, the webpage will be redirected back to IM, where we will store the authorized organization details, permanent auth token, and other required information. A parent Account will be created for the Authorized Wecom Account. Post that, The Authorized parent account details will be sent via post message to the parent window from the Child window(im.zoho.com.cn) in browser in the below format.
 
